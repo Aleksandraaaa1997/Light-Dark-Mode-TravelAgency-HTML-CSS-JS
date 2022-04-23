@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap');
+
+:root
+ {
+    --primary-color: #FF5C5C;
+    --primary-variant: #ff2d2d;
+    --secondary-color: #1b9999;
+    --on-primary: rgb(250, 250, 250);
+    --on-background: rgb(66, 66, 66);
+    --on-background-alt: rgba(66, 66, 66, 0.7);
+    --background: rgb(250, 250, 250);
+    --box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5);
+}
+[data-theme="dark"] {
+    --primary-color: #9641FF;
+    --primary-variant: #6c63ff;
+    --secondary-color: #03dac5;
+    --on-primary: #000;
+    --on-background: rgba(255, 255, 255, 0.9);
+    --on-background-alt: rgba(255, 255, 255, 0.7);
+    --background: #121212;
+}
+
+/* Common Style */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    color: var(--on-background);
+    font-family: Comfortaa, sans-serif;
+    background-color: var(--background);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%234cd6de' fill-opacity='0.3' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+}
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    font-family: Kaushan Script, sans-serif;
+    font-size: 90px;
+}
+h2 {
+    color: var(--on-background-alt);
+    font-size: 30px;
+}
+/* End of Common Style */
+
+/* Dark Mode Switch */
+.theme-switch-wrapper{
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    right:25px;
+    top: 20px;
+   
+}
+.theme-switch-wrapper span{
+    margin-right: 10px;
+    font-size: 1rem;
+}
+.toggle-text{
+    position: relative;
+    top: -4px;
+    right: 5px;
+    color: var(--on-background);
+}
+.theme-switch{
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+.theme-switch input{
+    display: none;
+}
+.slider{
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+.slider::before{
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+input:checked + .slider{
+    background-color: var(--primary-color);
+}
+input:checked + .slider::before{
+    transform: translateX(26px);
+}
+.slider.round{
+    border-radius: 34px;
+}
+.slider.round::before{
+    border-radius: 50%;
+}
+.fas{
+    font-size: 30px;
+    margin-right: 5px;
+}
+/* End of Dark Mode Switch */
+
+/* Navbar */
+nav {
+    z-index: 11;
+    position: fixed;
+    font-size: 22px;
+    font-family: Oswald, sans-serif;
+    letter-spacing: 3px;
+    padding: 18px;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.5);
+}
+a {
+    margin-right: 25px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: var(--on-background);
+    border-bottom: 3px solid;
+}
+/* End of Navbar */
+
+/* Home Section */
+.tittle-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.tittle {
+    margin-bottom: 0.1em;
+    margin-top: 1em;
+}
+.home-img {
+    width: 20vw;
+    margin-top: 3em;
+}
+/* End of Home Section */
+
+/* About Section */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10em;
+    padding-bottom: 10em;
+}
+.about-tittle {
+    display: flex;
+    flex: row;
+}
+.about-img {
+    width: 18vw;
+    padding-left: 2em;
+    padding-bottom: 4em;
+}
+.description {
+    font-size: 22px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: justify;
+}
+/* End of About Section */
+
+/* Tours Section */
+.cards {
+    display: flex;
+    justify-content: space-evenly;
+}
+.card {
+    width: 33%;
+    padding: 0em 2em;
+    position: relative;
+}
+.front-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--on-primary);
+    border-radius: 1.5em;
+    position: relative;
+    padding-right: 2em;
+    padding-left: 2em;
+    z-index: 10;
+}
+.change > .front-side{
+    opacity: 0.5;
+    z-index: 0;
+}
+.card-image {
+    width: 12em;
+    height: 12em;
+    margin-top: 1em;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+}
+.tour-name {
+    font-size: 35px;
+    text-align: center;
+    color: var(--primary-color);
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4%;
+    right: 2.5rem;
+}
+.card-list {
+    width: 12em;
+    padding: 0;
+    text-align: center;
+}
+.card-list-item {
+    list-style: none;
+    font-weight: 500;
+    color: var(--on-background);
+    margin: 0.8em 0;
+    border-bottom: 1px solid var(--primary-color);
+}
+.back-side {
+    position: absolute;
+    top: 0;
+    background-color: var(--primary-color);
+    height: 100%;
+     width: 65%;
+    border-radius: 1.5em;
+    padding-right: 2em;
+    padding-left: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0em 2em;
+    transform: translateZ(-0.9em) translateX(-0.9em);
+    opacity: 0.5;
+}
+.change > .back-side{
+    transform: translateZ(0) translateX(0);
+    opacity: 0.9;
+}
+.tour-price {
+    font-size: 2em;
+    font-weight: 300px;
+    color: var(--on-primary);
+}
+.card-button {
+    color: var(--on-background);
+    background-color: var(--on-primary);
+    border: none;
+    font-size: 1em;
+    padding: 1em 2em;
+    letter-spacing: 0.3em;
+    border-radius: 1em;
+    cursor: pointer;
+}
+.navigation-button {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    padding: 0.5em;
+    letter-spacing: 0.1em;
+    background-color: var(--on-primary);
+    color: var(--on-background);
+    border-radius: 1em;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* End of Tours Section */
+
+/* Contact Section */
+.icon{
+    font-size: 100px;
+    margin-right: 50px;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+.icon:hover{
+    color: var(--on-background);
+}
+/* End of Contact Section */
